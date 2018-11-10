@@ -16,7 +16,6 @@ node {
     
         sh "docker build -t ${imageName} -f applications/hello-kenzan/Dockerfile applications/hello-kenzan"
 	sh '''sed -i "s/latest/${tag}/g" "applications/${appName}/k8s/*.yaml"'''
-	sh "cat "applications/${appName}/k8s/*.yaml""
     
     stage "Push"
 
